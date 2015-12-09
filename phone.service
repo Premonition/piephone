@@ -1,0 +1,14 @@
+[Unit]  
+Description=Phone Player
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/
+ExecStart=/home/pi/phone.py
+Restart=always
+StandardOutput=null
+StandardError=null
+
+[Install]
+WantedBy=multi-user.target

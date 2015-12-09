@@ -1,3 +1,5 @@
+#!/usr/bin/python2
+
 import RPi.GPIO as GPIO
 import time
 import sys
@@ -120,6 +122,7 @@ if __name__ == '__main__':
             number = ''
             lastpress = None
             track = None
+            time.sleep(0.01)
             continue
 
         # Nothing playing? Play the dialtone
@@ -142,7 +145,7 @@ if __name__ == '__main__':
             while (kp.getKey() == digit):
                 time.sleep(0.01)
 
-        if digit not in [None, '#', '*', 'Up', 'Down']:
+        if digit not in [None, 'Up', 'Down']:
             lastpress = int(round(time.time() * 1000))
             history += [digit]
 
